@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Mon agence
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="jumbotron text-center">
+		<div class="container">
+			<h1>Agence World</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed veniam autem non quia animi quae enim reprehenderit illo! Quos quidem cupiditate ducimus neque molestiae dolorem repudiandae fugiat blanditiis voluptatum aperiam?</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<h2 class="text-center">Les derniers biens</h2>
+		<div class="row col">
+			{% for property in properties %}
+				<div class="col-3">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href=" {{ path('property_show' , {id : property.id, slug : property.slug })}} ">
+									{{ property.title }}
+								</a>
+							</h5>
+							<p class="card-text">
+								{{ property.city }}
+								(
+								{{ property.postalCode }}
+								)
+								<div class="text-primary" style="font-weight : bold; font-size: 2rem">
+									{{ property.formattedPrice }}
+									€
+
+								</div>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}
