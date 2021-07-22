@@ -1,0 +1,50 @@
+{{ form_start(form) }}
+
+<div class="row">
+	<div class="col md-4">
+		{{ form_row(form.title, {'label': 'Titre'}) }}
+	</div>
+	<div class="col md-4">
+		{{ form_row(form.surface, {'label': 'Surface'}) }}
+	</div>
+	<div class="col md-4">
+		{{ form_row(form.price, {'label': 'Prix'}) }}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col md-2">
+		{{ form_row(form.rooms, {'label': 'Pièces'}) }}
+	</div>
+	<div class="col md-2">
+		{{ form_row(form.bedrooms, {'label': 'Chambres'}) }}
+	</div>
+	<div class="col md-2">
+		{{ form_row(form.heat, {'label': 'Chauffage'}) }}
+	</div>
+	<div class="col md-2">
+		{{ form_row(form.floor, {'label': 'Etages'}) }}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col md-5">
+		{{ form_row(form.address, {'label': 'Adresse'}) }}
+	</div>
+	<div class="col md-5">
+		{{ form_row(form.city, {'label': 'Ville'}) }}
+	</div>
+	<div class="col md-5">
+		{{ form_row(form.postal_code, {'label': 'Code postal'}) }}
+	</div>
+	<div class="col md-5">
+		{{ form_row(form.sold, {'label': 'Vendu'}) }}
+	</div>
+</div>
+
+
+{{ form_widget(form) }}
+<button class="btn btn-primary">
+	{{button | default('Enregistrer')}}
+</button>
+{{ form_end(form) }}
