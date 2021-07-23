@@ -19,6 +19,9 @@
 					{{ form_row(form.maxPrice) }}
 				</div>
 				<div class="col">
+					{{ form_row(form.options) }}
+				</div>
+				<div class="col">
 					<button class="btn btn-primary" type="submit">Rechercher</button>
 				</div>
 			</div>
@@ -34,6 +37,10 @@
 				<div class="col-md-4">
 					{%include 'property/_property.html.twig' %}
 				</div>
+			{% else %}
+
+				<p style="text-align :center">Aucun bien ne corresponds à votre demande.</p>
+
 			{% endfor %}
 
 		</div>

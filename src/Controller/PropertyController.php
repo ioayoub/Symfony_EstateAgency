@@ -32,12 +32,6 @@ class PropertyController extends AbstractController
         $form = $this->createForm(PropertySearchType::class, $search);
         $form->handleRequest($request);
 
-        // if($form->isValid() && $form->isSubmitted()) {
-        //     $this->em->persist($search);
-        // }
-        //Gerer le traitement dans le controlleur
-        //passe en parametre findAlVisibleQuery
-
         $properties = $paginator->paginate(
             $this->repo->findAllVisibileQuery($search),
             $request->query->getInt('page', 1),
