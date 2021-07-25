@@ -6,7 +6,20 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
+
+import $ from 'jquery';
 import './styles/app.css';
+import 'select2';
+
+//global.$ = $;
+$('select').select2();
+
+let $contactButton = $('#contactButton')
+$contactButton.click(e => {
+    e.preventDefault()
+    $('#contactForm').slideDown();
+    contactButton.slideUp();
+});
 
 // start the Stimulus application
 import './bootstrap';
